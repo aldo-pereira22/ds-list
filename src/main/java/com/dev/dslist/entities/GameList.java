@@ -1,12 +1,24 @@
 package com.dev.dslist.entities;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_game_list")
 public class GameList {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 
-    GameList(){
+    public GameList(){
+    }
+
+    public GameList(long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public long getId() {
